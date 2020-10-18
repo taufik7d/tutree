@@ -1,0 +1,795 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/myjs.js"></script>
+    <title>All types of jobs in your local area</title>
+    
+    <style>
+      .footer-link a{
+        color:rgb(40, 122, 185);
+      }
+      address{
+        color:rgb(40, 122, 185);
+      }
+      .footer-link a:hover{
+        color:white; 
+      }
+      address:hover{
+        color:white; 
+      }
+
+      #mainNavbar a:hover{
+        color: rgb(243, 132, 34);
+        
+      }
+
+      .feed-position{
+        position: fixed;
+        
+      }
+
+      .link1 .link2{
+        text-decoration: none;
+      }
+      .link1:hover{
+        
+        border-bottom: 4px solid  rgb(243, 132, 34);
+      }
+      .link2:hover{
+        
+        border-bottom: 4px solid  rgb(243, 132, 34);
+      }
+      
+    </style>
+  </head>
+  
+  <body>  
+    <header ><!--header section start-->
+      <nav class="navbar navbar-expand-sm navbar-light bg-white">
+      
+      <a class="navbar-brand" href="#"><img src="images/logo1.svg" alt="brand-logo" class="img-fluid" style="width: 220px;height:42px;"></a>
+  
+      <!-- Toggler/collapsible Button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <!-- Navbar links -->
+  
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link link1" href="#">Find Jobs</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link link2" href="#">Resources</a>
+          </li>
+        </ul>
+      </div>
+  
+  </nav>
+</header><!--header section end-->
+ 
+
+<!--job vaccancies row-->
+<div class="row bg-dark"> 
+    <div class="col-md-6 offset-md-3 col-6 offset-3">
+     <h4 class="text-white">Jobs and vacancies</h4>
+  </div>
+</div>
+  
+
+
+<!--search section-->
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+     
+        <!-- Toggler/collapsible Button -->
+       <button id="search-icon" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainSearch">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+   
+    <!-- search collapsible-->
+    <div class="collapse navbar-collapse justify-content-center" id="mainSearch">
+     
+      <form class="form-inline"action="#">
+        <div class="input-group input-group-lg mt-2" >
+          <div class="input-group-prepend">
+            <span class="input-group-text bg-light"><i class="fa fa-search" aria-hidden="true"></i></span>
+          </div>
+            <input type="text" class="form-control form-control-lg" placeholder="eg. Programmer">
+        </div>
+
+        <div class="input-group input-group-lg mt-2">
+          <div class="input-group-prepend">
+            <span class="input-group-text bg-light"><i class="fa fa-paper-plane" aria-hidden="true"></i></span>
+          </div>
+          <input type="text" class="form-control" placeholder="eg. Mumbai">
+          <div class="input-group-append">
+            <button class="btn btn-light" type="button"><i class="fa fa-bullseye" aria-hidden="true"></i></button>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg ml-2 mt-2" id="find-jobs">Find Jobs</button>
+
+      </form>
+    </div>
+      
+    </nav><!-- end search navigation-->
+  
+<!-- Show Filters Button-->
+ <nav class="navbar navbar-expand-md navbar-dark mt-2"> 
+   <button class="navbar-toggler btn bg-primary btn-block text-white" id="show-filter" style="height: 45px;" type="button" data-toggle="collapse" data-target="#mainFilter">Show Filters</button>
+  </nav>
+
+
+<div class="row">
+  <div class="col-md-3"><!--Filter Start-->
+  <div class="mt-1 mb-5 mx-2 ml-3 bg-light rounded shadow-lg">
+
+    <div class="show" id="mainFilter">
+     
+      <!--accordion Filters-->
+      <div class="accordion" id="accordionFilter">
+        
+        <div id="filterone" style="border-bottom-color: gainsboro;border-bottom-style: dotted;"><!--Date Posted filter start-->
+          <div  id="date-btn">
+            <a href="#dateFilter" data-toggle="collapse" aria-expanded="true" style="text-decoration: none;" role="button" class="d-block">
+            <b class="text-dark ml-1">Date Posted</b><i id="date-sign" class="fa fa-minus-square text-dark float-right" aria-hidden="true"></i></a>
+          </div>
+            
+          <div class="show ml-2" id="dateFilter" data-parent="#accordionFilter" >
+              
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="optradio">24 hours
+                </label>
+              </div>
+            
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="optradio">3 days
+                </label>
+              </div>
+
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="optradio">7 days
+                </label>
+              </div>
+
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="optradio">30 days
+                </label>
+              </div>
+
+            </div>
+          </div><!--Date Posted filter end-->
+          
+          <br>
+
+          <div style="border-bottom-color: gainsboro;border-bottom-style: dotted;"><!--Job Type Filter start-->
+            <div id="jobtype-btn"><a href="#jobtypeFilter" data-toggle="collapse" style="text-decoration: none;" role="button" class="d-block">
+              <b class="text-dark ml-1">Job Type</b><i id="jobtype-sign" class="fa fa-minus-square text-dark float-right" aria-hidden="true"></i></a>
+            </div>
+              
+            <div class="show ml-2" id="jobtypeFilter" data-parent="#accordionFilter">
+                
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="checkbox" checked class="form-check-input" value="">All
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" value="">Full-Time Employee
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" value="">Part-Time Employee
+                  </label>
+                </div>
+
+              </div>
+          </div><!--Job Type Filter end-->
+          
+          <br>
+          
+          <div class=""style="border-bottom-color: gainsboro;border-bottom-style: dotted;"><!--Categories Filter start-->
+            <div id="categories-btn"><a href="#categoriesFilter" data-toggle="collapse" style="text-decoration: none;" role="button" class="d-block">
+              <b class="text-dark ml-1">Categories</b><i id="categories-sign" class="fa fa-minus-square text-dark float-right" aria-hidden="true"></i></a>
+            </div>
+              
+            <div class="show ml-2" id="categoriesFilter" data-parent="#accordionFilter">
+                
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" value="">Information Technology
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" value="">Engineering
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" value="">Professional Services
+                  </label>
+                </div>
+
+              </div>
+          </div><!--Categories Filter end-->
+          
+          <br>
+          
+        <div class="" style="border-bottom-color: gainsboro;border-bottom-style: dotted;"><!--States filter start-->
+          <div id="state-btn"><a href="#stateFilter" data-toggle="collapse" style="text-decoration: none;" role="button" class="d-block">
+            <b class="text-dark ml-1">States</b><i id="state-sign" class="fa fa-minus-square text-dark float-right"aria-hidden="true"></i></a>
+          </div>
+            
+          <div class="show ml-2" id="stateFilter" data-parent="#accordionFilter">
+              
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="optradio">Karnataka
+                </label>
+              </div>
+            
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="optradio">Kerala
+                </label>
+              </div>
+
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="optradio">Telengana
+                </label>
+              </div>
+
+             
+
+            </div>
+          </div><!--States filter end-->
+          <br>
+      </div>
+        
+      <div class="" style="border-bottom-color: gainsboro;border-bottom-style: dotted;"><!--City filter start-->      
+            <div id="city-btn"><a href="#cityFilter" data-toggle="collapse" style="text-decoration: none;" role="button" class="d-block">
+              <b class="text-dark ml-1">City</b><i id="city-sign" class="fa fa-minus-square text-dark float-right" aria-hidden="true"></i></a>
+            </div>
+              
+            <div class="show ml-2" id="cityFilter" data-parent="#accordionFilter">
+                
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optradio">Bengaluru
+                  </label>
+                </div>
+              
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optradio">Thiruvananthapuram 
+                  </label>
+                </div>
+  
+              </div>
+            </div><!--City filter end-->
+            <br>
+            <button type="button" class="btn btn-primary btn-block btn-lg" id="side-filter-button">Filter Jobs</button>
+            
+            <button type="reset" class="btn btn-danger btn-block btn-lg" id="cancel-button">Cancel</button>
+            
+      </div> 
+    </div><!-- jumbotron end-->
+  </div> <!--Filter End-->
+  
+  
+  <!-- Main Middle Div start-->
+  <div class="col-md-9 mt-1 bg-light rounded ">
+    
+    <!-- Email button and Sort-->
+    <div class="row" style="border-bottom-color: gainsboro;border-bottom-style: dotted;">
+     
+      <div class="col-md-4 col-11">
+        <button type="submit" class="btn btn-outline-primary btn-block ml-3 mr-5 mt-2">
+        <i class="fa fa-envelope-o" aria-hidden="true"></i> Email me jobs like these</button>
+  
+        <p class="ml-4 mt-1">Sort By: <b class="text-primary">Relevance</b> | Date</p>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-12">
+      
+      <!-- Feedback Button-->
+      <div class="row">
+          <div class="col-md-2 offset-md-10 col-4 offset-9"> <button type="button" class="btn btn-danger feed-position mr-5" data-toggle="modal" data-target="#feedback">Feedback</button>
+        </div>  
+      </div>
+
+        <ul class="list-unstyled">
+
+          <li class="media bg-white mt-4 mr-3 ml-3 border border-grey rounded">
+             
+            <div class="media-body pl-2 pt-2">
+                
+              <div class="row">
+                  <div class="col-md-8 ">   
+                    <a href="#" style="text-decoration: none;" >   
+                      <h3 class="text-primary text-dark">Sr. Software Developer</h3>
+                      <i class="fa fa-clock-o text-dark" aria-hidden="true"></i> posted 15 days ago</a>
+                      <br><br>
+                    <a href="#" style="text-decoration: none;">
+                      <i class="fa fa-building-o ml-3 text-dark" aria-hidden="true"></i><span class="text-dark"> UST Global </span> <span class="text-muted">|</span> 
+                      <i class="fa fa-map-marker text-dark" aria-hidden="true"></i> <span class="text-dark"> Hyderabad </span> <span class="text-muted">|</span> 
+                    </a>
+                      <i class="fa fa-suitcase" aria-hidden="true"></i> Full-Time Employee 
+                    </div>
+                      <div class="col-md-4"> <img src="images/company.jpg" alt="Ust global" style="" class="border border-grey rounded img-fluid img-thubnail mr-5 mt-3">  
+                      </div>      
+                </div>
+
+               <a href="#" style="text-decoration: none;">
+                <p class="pt-4 pr-2 text-lead text-justify text-dark">
+                  Sr. DevOps Engineer for Hyderabad Location
+                  AWS EC2 instance setup using various AMIs
+                  EKS cluster setup and monitoring
+                  Experience configuring Ingress Service Pod Deployments units in Kubernetes and using kubectl command
+                  Creating docker images and using docker command line
+                 </p>
+                </a>
+              </div>
+          </li>
+
+          
+          <li class="media bg-white mt-4 mr-3 ml-3 border border-grey rounded">
+            <div class="media-body pl-2 pt-2">
+                
+              <div class="row">
+                  <div class="col-md-8 ">   
+                    <a href="#" style="text-decoration: none;" >   
+                      <h3 class="text-primary text-dark">Jr. Software Developer</h3>
+                      <i class="fa fa-clock-o text-dark" aria-hidden="true"></i> posted 15 days ago</a>
+                      <br><br>
+                    <a href="#" style="text-decoration: none;">
+                      <i class="fa fa-building-o ml-3 text-dark" aria-hidden="true"></i><span class="text-dark"> UST Global </span> <span class="text-muted">|</span> 
+                      <i class="fa fa-map-marker text-dark" aria-hidden="true"></i> <span class="text-dark"> Pune </span> <span class="text-muted">|</span> 
+                    </a>
+                      <i class="fa fa-suitcase" aria-hidden="true"></i> Part-Time Employee 
+                    </div>
+                      <div class="col-md-4"> <img src="images/company.jpg" alt="Ust global" style="" class="border border-grey rounded img-fluid img-thubnail mr-5 mt-3">  
+                      </div>      
+                </div>
+
+               <a href="#" style="text-decoration: none;">
+                <p class="pt-4 pr-2 text-lead text-justify text-dark">
+                  Sr. DevOps Engineer for Hyderabad Location
+                  AWS EC2 instance setup using various AMIs
+                  EKS cluster setup and monitoring
+                  Experience configuring Ingress Service Pod Deployments units in Kubernetes and using kubectl command
+                  Creating docker images and using docker command line
+                 </p>
+                </a>
+              </div>
+          </li>
+
+          
+          <li class="media bg-white mt-4 mr-3 ml-3 border border-grey rounded">
+            <div class="media-body pl-2 pt-2">
+                
+              <div class="row">
+                  <div class="col-md-8 ">   
+                    <a href="#" style="text-decoration: none;" >   
+                      <h3 class="text-primary text-dark">Sr. Software Developer</h3>
+                      <i class="fa fa-clock-o text-dark" aria-hidden="true"></i> posted 15 days ago</a>
+                      <br><br>
+                    <a href="#" style="text-decoration: none;">
+                      <i class="fa fa-building-o ml-3 text-dark" aria-hidden="true"></i><span class="text-dark"> UST Global </span> <span class="text-muted">|</span> 
+                      <i class="fa fa-map-marker text-dark" aria-hidden="true"></i> <span class="text-dark"> Mumbai </span> <span class="text-muted">|</span> 
+                    </a>
+                      <i class="fa fa-suitcase" aria-hidden="true"></i> Full-Time Employee 
+                    </div>
+                      <div class="col-md-4"> <img src="images/company.jpg" alt="Ust global" style="" class="border border-grey rounded img-fluid img-thubnail mr-5 mt-3">  
+                      </div>      
+                </div>
+
+               <a href="#" style="text-decoration: none;">
+                <p class="pt-4 pr-2 text-lead text-justify text-dark">
+                  Sr. DevOps Engineer for Hyderabad Location
+                  AWS EC2 instance setup using various AMIs
+                  EKS cluster setup and monitoring
+                  Experience configuring Ingress Service Pod Deployments units in Kubernetes and using kubectl command
+                  Creating docker images and using docker command line
+                 </p>
+                </a>
+              </div>
+          </li>
+
+          
+          <li class="media bg-white mt-4 mr-3 ml-3 border border-grey rounded">
+            <div class="media-body pl-2 pt-2">
+                
+              <div class="row">
+                  <div class="col-md-8 ">   
+                    <a href="#" style="text-decoration: none;" >   
+                      <h3 class="text-primary text-dark">Sr. Software Developer</h3>
+                      <i class="fa fa-clock-o text-dark" aria-hidden="true"></i> posted 15 days ago</a>
+                      <br><br>
+                    <a href="#" style="text-decoration: none;">
+                      <i class="fa fa-building-o ml-3 text-dark" aria-hidden="true"></i><span class="text-dark"> UST Global </span> <span class="text-muted">|</span> 
+                      <i class="fa fa-map-marker text-dark" aria-hidden="true"></i> <span class="text-dark"> Bengaluru </span> <span class="text-muted">|</span> 
+                    </a>
+                      <i class="fa fa-suitcase" aria-hidden="true"></i> Full-Time Employee 
+                    </div>
+                      <div class="col-md-4"> <img src="images/company.jpg" alt="Ust global" style="" class="border border-grey rounded img-fluid img-thubnail mr-5 mt-3">  
+                      </div>      
+                </div>
+
+               <a href="#" style="text-decoration: none;">
+                <p class="pt-4 pr-2 text-lead text-justify text-dark">
+                  Sr. DevOps Engineer for Hyderabad Location
+                  AWS EC2 instance setup using various AMIs
+                  EKS cluster setup and monitoring
+                  Experience configuring Ingress Service Pod Deployments units in Kubernetes and using kubectl command
+                  Creating docker images and using docker command line
+                 </p>
+                </a>
+              </div>
+          </li>
+        </ul>
+
+      </div>      
+    </div>   
+  </div><!-- Main Middle Div end-->
+</div><!--middle section row end-->
+
+
+<!--Pagination button-->
+<div class="row">
+  <div class="col-md-3 offset-md-6 col-3 offset-5">
+    <button type="button" class="btn btn-primary my-3">1</button>
+  </div>
+</div>
+
+<!-- Help and Contact row-->
+<div class="row">
+  <div class="col-md-12" style="background-color: rgb(40, 122, 185);">
+    <h4 class="text-center">Need Help? <b>Contact Us</b></h4>
+  </div>
+</div>
+
+<!-- footer starts-->
+<div class="row border border-success footer-link" style="background-color:rgb(2, 53, 88);">
+ 
+ <!-- <div class="col-md-1 w-100 mt-3"></div>-->
+  <div class="col-md-2 mt-3 offset-md-1 offset-4">
+    <span class="text-white"><b>JOB SEEKERS</b></span>
+    <ul class="list-unstyled">
+    <li><a href="#" style="text-decoration: none;">Browse All Jobs</a></li> 
+    <li><a href="#" style="text-decoration: none;">Search by Location</a></li>
+    <li><a href="#" style="text-decoration: none;">Job Categories</a></li> 
+    <li><a href="#" style="text-decoration: none;">Jobs By Company</a></li>
+    <li><a href="#" style="text-decoration: none;">Add Your Resume</a></li>
+    </ul>
+  </div>
+  <div class="col-md-2 mt-3 col-5 offset-md-0 offset-1">
+    <span class="text-white"><b>EMPLOYERS</b></span>
+    <ul class="list-unstyled">
+    <li><a href="#" style="text-decoration: none;">Search Resumes</a></li> 
+    <li><a href="#" style="text-decoration: none;">Post Jobs</a></li>
+    <li><a href="#" style="text-decoration: none;">Blog for HR</a></li> 
+    </ul>  
+  </div>
+ 
+  <div class="col-md-2 mt-3 col-5 offset-md-0 offset-1">
+    <span class="text-white"><b>LEGAL</b></span>
+    <ul class="list-unstyled">
+    <li><a href="#" style="text-decoration: none;">Terms and Conditions</a></li> 
+    <li><a href="#" style="text-decoration: none;">Privacy Policy</a></li>
+  </ul>
+  </div>
+  
+  <div class="col-md-2 mt-3 col-6 offset-md-0 offset-3 ">
+    <span class="text-white"><b>CAREERBUILDER</b></span>
+    <ul class="list-unstyled">
+    <li ><a href="#" style="text-decoration: none;">About Us</a></li> 
+    </ul>
+    <address class="text-justify">
+      Express Trade Towers 2
+      Unit No.3401, 4th Floor
+      Noida, UP 201 301
+      India
+    </address>
+  </div>
+ 
+ 
+  <div class="col-md-2 mt-3 col-6 offset-md-0 offset-3 ">
+    <span class="text-white"><b>SOCIAL</b></span>
+    <br>
+    <a href="#"><i class="fa fa-twitter-square text-white" style="font-size: 43px;" aria-hidden="true"></i></a>
+    <a href="#"><i class="fa fa-facebook-square text-white" style="font-size: 43px;" aria-hidden="true"></i></a>
+    <a href="#"><i class="fa fa-linkedin-square text-white" style="font-size: 45px;" aria-hidden="true"></i></a>  
+  </div>
+</div>
+<!-- footer end-->
+
+
+
+      <!-- Popup Window Start-->
+    
+      <div class="modal fade show" id="feedback" data-backdrop="static">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="row modal-header">
+            <div class="col-10 offset-1 col-md-8 offset-md-3"><img src="images/popup-logo.png" alt="popup-logo" class="img-fluid"></div>
+            <button class="close mr-2"data-dismiss="modal"><span>&times;</span></button>
+            
+            <div class="col-10 offset-1 col-md-4 offset-md-8 mt-4">
+              <div class="form-group">
+                <select class="form-control" id="sel1">
+                  <option>English</option>
+                  <option>Deutsch</option>
+                  <option>Espanol</option>
+                  <option>Espanol (America Latina)</option>
+                  <option>Francais</option>
+                  <option>Nederlands</option>
+                  <option>Svenska</option>
+                </select>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="modal-body" id="feedback-body">
+            <h5 class="ml-4">What type of feedback would you like to leave for us?</h5>
+            <div class="row flex-column">
+              <div class="col-md-10 offset-md-1 my-2">
+                <button type="button" class="btn btn-lg btn-block btn-default" id="Suggestion">Suggestion or General Feedback</button>
+              </div>
+              
+              <div class="col-md-10 offset-md-1 my-2">
+                <button type="button" class="btn btn-lg btn-block btn-default" id="Bug">Bug or Site Issue</button>
+              </div>
+              
+              <div class="col-md-10 offset-md-1 my-2">
+                <button type="button" class="btn btn-lg btn-block btn-default" id="Question">Question</button>
+              </div>
+            </div>            
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-lg" style="background-color: rgb(40, 122, 185);">>></button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- Popup Window End-->
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    
+    <!-- Jquery Code-->
+    <script>
+      $(document).ready(function(){
+        let isfeed=true;
+        let isbug=true;
+        let isquestion=true;
+
+        $("#Suggestion").click(function(){
+          
+        if(isfeed==true)
+        {
+          $('#feedback-body').after("<div class='row' id='text-area'><div class='col-md-8 offset-md-2'><div class='form-group'><label for='comment'><h6>What would you like to share with us?</h6></label><textarea class='form-control' rows='5' id='comment'></textarea></div></div></div>");
+          isfeed=false;
+        
+        if(isfeed==false)
+        {
+          $("#Suggestion").click(function(){
+          $('#text-area').toggle();
+          });
+
+        }
+        }
+         
+      });
+     
+      $("#Bug").click(function(){
+          
+        if(isbug==true)
+        {
+            $('#feedback-body').after('<div class="row" id="bug-link"><div class="col-md-8 offset-md-2"><h6>If you have encountered a bug or site issue or if you have a question for customer support, please visit our <a href="#" >job-seeker support page.</a></h6> </div></div>');
+            isbug=false;
+
+          if(isbug==false)
+          {
+          $("#Bug").click(function(){
+          $('#bug-link').toggle();
+          });
+
+          }
+        }   
+        });
+
+        $("#Question").click(function(){
+          
+        if(isquestion==true)
+        {
+            $('#feedback-body').after('<div class="row" id="question-link"><div class="col-md-8 offset-md-2"><h6>If you have encountered a bug or site issue or if you have a question for customer support, please visit our <a href="#" >job-seeker support page.</a></h6> </div></div>');
+            isquestion=false;
+
+          if(isquestion==false)
+          {
+          
+          $("#Question").click(function(){
+          $('#question-link').toggle();
+          });
+          }
+          
+        }   
+        });
+
+      
+
+      $(window).resize(function(){
+        let is_show = $('#mainFilter').hasClass('show');
+        let is_collapse = $('#mainFilter').hasClass('collapse');
+
+
+        if(is_show==true && is_collapse==false)
+        {
+          $('#mainFilter').removeClass('show').addClass('collapse'); 
+          is_collapse=true
+          is_show=false
+        }
+        else if(is_collapse==true && is_show==false)
+        {
+       
+        $('#mainFilter').removeClass('collapse').addClass('show'); 
+          is_collapse=false
+          is_show=true
+        }
+
+        $('#dateFilter').toggleClass('show');
+        $('#jobtypeFilter').toggleClass('show');
+        $('#categoriesFilter').toggleClass('show');
+        $('#stateFilter').toggleClass('show');
+        $('#cityFilter').toggleClass('show');
+
+        $('#find-jobs').removeClass('btn-block');
+      });//resize-end
+
+      $('#show-filter').click(function() {
+
+        $('#dateFilter').addClass('collapse');
+        $('#jobtypeFilter').addClass('collapse');
+        $('#categoriesFilter').addClass('collapse');
+        $('#stateFilter').addClass('collapse');
+        $('#cityFilter').addClass('collapse');
+      
+         //Cancel-button Code
+         // $('#side-filter-button').after('<button type="reset" class="btn btn-danger btn-block btn-lg" id="cancel-button">Cancel</button>');
+            
+          $('#date-sign').removeClass('fa fa-minus-square').addClass('fa fa-plus-square');
+          $('#jobtype-sign').removeClass('fa fa-minus-square').addClass('fa fa-plus-square');
+          $('#categories-sign').removeClass('fa fa-minus-square').addClass('fa fa-plus-square');
+          $('#state-sign').removeClass('fa fa-minus-square').addClass('fa fa-plus-square');
+          $('#city-sign').removeClass('fa fa-minus-square').addClass('fa fa-plus-square');
+        
+      
+      });   // show-filter functions-end
+
+     
+     
+      // '+' to '-' transition
+      //1.DateFilter
+
+      $("#date-btn").click(function(){
+        let is_date_sign_minus =  $("#date-sign").hasClass('fa fa-minus-square');
+        let is_date_sign_plus =  $("#date-sign").hasClass('fa fa-plus-square');
+    
+        if(is_date_sign_minus)
+        {
+            $("#date-sign").removeClass('fa fa-minus-square').addClass('fa fa-plus-square');
+        }
+        else if(is_date_sign_plus)
+        {
+            $("#date-sign").removeClass('fa fa-plus-square').addClass('fa fa-minus-square');
+        }
+     
+      });
+
+      //2.Job-Type
+      $("#jobtype-btn").click(function(){
+        let is_jobtype_sign_minus =  $("#jobtype-sign").hasClass('fa fa-minus-square');
+        let is_jobtype_sign_plus =  $("#jobtype-sign").hasClass('fa fa-plus-square');
+       
+        if(is_jobtype_sign_minus)
+        {
+            $("#jobtype-sign").removeClass('fa fa-minus-square').addClass('fa fa-plus-square');
+        }
+        else if(is_jobtype_sign_plus)
+        {
+            $("#jobtype-sign").removeClass('fa fa-plus-square').addClass('fa fa-minus-square');
+        }
+     
+      });
+
+      //3.Categories
+
+      $("#categories-btn").click(function(){
+        let is_categories_sign_minus =  $("#categories-sign").hasClass('fa fa-minus-square');
+        let is_categories_sign_plus =  $("#categories-sign").hasClass('fa fa-plus-square');
+        
+        
+        if(is_categories_sign_minus)
+        {
+            $("#categories-sign").removeClass('fa fa-minus-square').addClass('fa fa-plus-square');
+        }
+        else if(is_categories_sign_plus)
+        {
+            $("#categories-sign").removeClass('fa fa-plus-square').addClass('fa fa-minus-square');
+        }
+     
+      });
+
+      //4.state filter
+      $("#state-btn").click(function(){
+        let is_state_sign_minus =  $("#state-sign").hasClass('fa fa-minus-square');
+        let is_state_sign_plus =  $("#state-sign").hasClass('fa fa-plus-square');
+       
+        if(is_state_sign_minus)
+        {
+            $("#state-sign").removeClass('fa fa-minus-square').addClass('fa fa-plus-square');
+        }
+        else if(is_state_sign_plus)
+        {
+            $("#state-sign").removeClass('fa fa-plus-square').addClass('fa fa-minus-square');
+        }
+        
+      });
+      
+      //5.City filter
+      $("#city-btn").click(function(){
+        let is_city_sign_minus =  $("#city-sign").hasClass('fa fa-minus-square');
+        let is_city_sign_plus =  $("#city-sign").hasClass('fa fa-plus-square');
+        
+        if(is_city_sign_minus)
+        {
+            $("#city-sign").removeClass('fa fa-minus-square').addClass('fa fa-plus-square');
+        }
+        else if(is_city_sign_plus)
+        {
+            $("#city-sign").removeClass('fa fa-plus-square').addClass('fa fa-minus-square');
+        }
+      });
+
+      $('#search-icon').click(function(){
+        $('#find-jobs').toggleClass('btn-block');
+      });
+      
+
+    });//ready end
+      
+    </script>
+    
+      
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
